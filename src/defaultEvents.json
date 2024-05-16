@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Event 1",
+    "description": "Description for Event 1",
+    "date": "2024-05-20",
+    "organizer": "Organizer A"
+  },
+  {
+    "title": "Event 2",
+    "description": "Description for Event 2",
+    "date": "2024-05-25",
+    "organizer": "Organizer B"
+  },
+  {
+    "title": "Event 3",
+    "description": "Description for Event 3",
+    "date": "2024-06-01",
+    "organizer": "Organizer C"
+  }
+]
