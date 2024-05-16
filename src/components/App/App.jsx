@@ -1,14 +1,22 @@
-//import { useState } from "react";
-import "../App/App.module.css"
+import { useState } from "react";
+import "../App/App.module.css";
 import RegistrationForm from "../RegistrationForm/RegistrationForm";
-//import defaultEvents from "../../defaultEvents.json";
+
 
 export default function App() {
-	//const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState([]);
 
+  const addEvent = (newUser) => {
+    setEvents((currEvents) => {
+      return [...currEvents, newUser];
+    });
+  };
 
+  
 
-	return <>
-		<RegistrationForm/>
-	</>;
+  return (
+    <div>
+      <RegistrationForm onAdd={addEvent} />
+    </div>
+  );
 }
