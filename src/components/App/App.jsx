@@ -2,32 +2,52 @@ import { useState, useEffect } from "react";
 import "../App/App.module.css";
 import RegistrationForm from "../RegistrationForm/RegistrationForm";
 import defaultEvents from "../../defaultEvents.json";
-import EventList from "../EventlList/EventList";
+import EventList from "../EventList/EventList";
+import ParticipantsList from "../ParticipantsList/ParticipantsList";
+import css from "../App/App.module.css";
 
 export default function App() {
-  const [events, setEvents] = useState(() => {
-    const savedEvents = localStorage.getItem("saved-events");
-    if (savedEvents !== null) {
-      return JSON.parse(savedEvents);
+  const [participants, setParticipants] = useState(() => {
+    const savedParticipants = localStorage.getItem("saved-participants");
+    if (savedParticipants !== null) {
+      return JSON.parse(savedParticipants);
     }
-    return defaultEvents;
+    return [];
   });
 
-  const addEvent = (newUser) => {
-    setEvents((currEvents) => {
-      return [...currEvents, newUser];
+  const [activePage, setActivePage] = useState("EventList");
+
+  const addParticipant = (newUser) => {
+    setParticipants((currParticipants) => {
+      return [...currParticipants, newUser];
     });
   };
 
   useEffect(() => {
-    localStorage.setItem("saved-events", JSON.stringify(events));
-  }, [events]);
+    localStorage.setItem("saved-participants", JSON.stringify(participants));
+  }, [participants]);
 
   return (
-    <div>
-      <h1>Events</h1>
-      <EventList events={events} />
-      <RegistrationForm onAdd={addEvent} />
+    <div className={css.app}>
+      {activePage === "EventList" && (
+        <EventList
+          defaultEvents={defaultEvents}
+          onClick={() => setActivePage("Participants")}
+          onBtn={() => setActivePage("Registration")}
+        />
+      )}
+      {activePage === "Registration" && (
+        <RegistrationForm
+          onAdd={addParticipant}
+          onBack={() => setActivePage("EventList")}
+        />
+      )}
+      {activePage === "Participants" && (
+        <ParticipantsList
+          participants={participants}
+          onBack={() => setActivePage("EventList")}
+        />
+      )}
     </div>
   );
 }
