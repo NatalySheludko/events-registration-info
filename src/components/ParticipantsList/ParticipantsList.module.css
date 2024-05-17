@@ -1,0 +1,36 @@
+.participants {
+  padding: 20px;
+}
+
+.backBtn {
+  margin: 20px auto;
+  padding: 10px 25px;
+  background-color: blueviolet;
+  border: none;
+  border-radius: 5px;
+  color: wheat;
+  display: flex;
+}
+
+.backBtn:hover,
+.backBtn:focus {
+  background-color: wheat;
+  color: blueviolet;
+}
+
+h3 {
+  padding-bottom: 20px;
+}
+
+.menuList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.item {
+  border-radius: 4px;
+  border: 1px solid black;
+  padding: 10px;
+	background-color: rgb(246, 246, 234);
+}
