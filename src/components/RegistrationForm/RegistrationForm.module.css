@@ -1,0 +1,61 @@
+.formik {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 50px;
+	background-color: rgb(246, 246, 234);
+}
+
+.title {
+  padding: 20px;
+}
+
+.formFields {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input {
+	padding: 10px 22px;
+	border-radius: 8px;
+  width: 350px;
+	 outline: 0px solid transparent;
+	border-color: blueviolet;
+}
+
+.input:hover, input:focus{
+	 outline: 0px solid transparent;
+	color: blueviolet;
+	border-color: blue;
+}
+
+.formFieldsRadio {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  display: flex;
+  margin: 20px auto;
+  padding: 10px 25px;
+  background-color: blueviolet;
+  border: none;
+  border-radius: 5px;
+  color: wheat;
+}
+
+.btn:hover, .btn:focus{
+	background-color: wheat;
+	color: blueviolet;
+}
+
+.error {
+  color: orangered;
+}
